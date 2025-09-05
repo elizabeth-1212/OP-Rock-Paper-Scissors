@@ -9,3 +9,5 @@ let word = getComputerChoice();
 console.log (word);
 
 
+let getHumanChoice = prompt('Please choose: rock, paper, or scissors', '');
+alert (`You chose ${getHumanChoice}`);
