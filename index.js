@@ -9,5 +9,13 @@ let word = getComputerChoice();
 console.log (word);
 
 
-let getHumanChoice = prompt('Please choose: rock, paper, or scissors', '');
-alert (`You chose ${getHumanChoice}`);
+function getHumanChoice(){
+    let choice = prompt('Please choose: rock, paper, or scissors.').toLowerCase();
+
+    while (choice !== 'rock' && choice !== 'paper' && choice !== 'scissors') {
+        alert ('Invalid choice.');
+        choice = prompt('Please enter: rock, paper, or scissors.').toLowerCase();
+    }
+    return choice;
+} 
+console.log (getHumanChoice);
