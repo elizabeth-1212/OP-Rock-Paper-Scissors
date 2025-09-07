@@ -37,4 +37,7 @@ function playRound (compChoice, humanChoice) {
     return `You lose, ${compChoice} beats ${humanChoice}.`;
 }
 
-console.log (playRound);
+const getComputerChoice = compChoice();
+const getHumanChoice = humanChoice();
+
+console.log (playRound(compChoice, humanChoice));
