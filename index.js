@@ -1,8 +1,8 @@
 
 function getComputerChoice(){
-    let choice = ['rock', 'paper', 'scissors'];
-    let index = Math.floor(Math.random() * choice.length);
-    return choice[index];
+    let compChoice = ["rock", "paper", "scissors"];
+    let index = Math.floor(Math.random() * compChoice.length);
+    return compChoice[index];
 }
 
 let word = getComputerChoice();
@@ -10,12 +10,31 @@ console.log (word);
 
 
 function getHumanChoice(){
-    let choice = prompt('Please choose: rock, paper, or scissors.').toLowerCase();
+    let humanChoice = prompt("Please choose: rock, paper, or scissors.").toLowerCase();
 
-    while (choice !== 'rock' && choice !== 'paper' && choice !== 'scissors') {
-        alert ('Invalid choice.');
-        choice = prompt('Please enter: rock, paper, or scissors.').toLowerCase();
+    while (humanChoice !== "rock" && humanChoice !== "paper" && humanChoice !== "scissors") {
+        alert ("Invalid choice.");
+        humanChoice = prompt("Please enter: rock, paper, or scissors.").toLowerCase();
     }
-    return choice;
+    return humanChoice;
 } 
 console.log (getHumanChoice);
+
+
+function playRound (compChoice, humanChoice) {
+    if (compChoice === humanChoice) {
+        return "It's a tie.";
+    }
+
+    if (
+        (humanChoice === "rock" && compChoice === "scissors") ||
+        (humanChoice === "scissors" && compChoice === "paper") ||
+        (humanChoice === "paper" && compChoice === "rock")
+    ){
+        return `You win, ${humanChoice} beats ${compChoice}.`; 
+}
+
+    return `You lose, ${compChoice} beats ${humanChoice}.`;
+}
+
+console.log (playRound);
